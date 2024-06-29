@@ -5,6 +5,16 @@ export const globalStyle = StyleSheet.create({
     paddingTop: 0,
     flex: 1,
   },
+  flexRow: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  flexColumn: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
   fullScreenBg: {
     resizeMode: "cover",
     position: "absolute",
@@ -14,16 +24,17 @@ export const globalStyle = StyleSheet.create({
     height: "100%",
   },
   center: {
-    justifyContent: "center",
     alignItems: "center",
   },
-  borderRadiusS: {
-    borderRadius: 4,
+
+  boxShadows: {
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 2,
+    elevation: 5,
   },
-  borderRadiusM: {
-    borderRadius: 8,
-  },
-  borderRadiusL: {
-    borderRadius: 12,
+  uppercase: {
+    textTransform: "uppercase",
   },
 });
