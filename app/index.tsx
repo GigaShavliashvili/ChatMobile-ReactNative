@@ -26,5 +26,5 @@ export default () => {
   }
   if (outh) {
     return <Redirect href="(home)" />;
-  } else return <Redirect href="(auth)" />;
+  } else return <Redirect href="(auth)/login" />;
 };

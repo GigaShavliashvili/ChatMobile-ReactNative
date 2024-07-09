@@ -1,10 +1,10 @@
 import { Colors } from "@/constants/Colors";
 import { globalStyle } from "@/constants/GlobalStyles";
-import React from "react";
+import React, { ReactElement } from "react";
 import { StyleSheet, Text, View, ViewProps } from "react-native";
 
 interface IDivider extends ViewProps {
-  text?: string;
+  text?: string | ReactElement;
   textColor?: string;
 }
 const Divider: React.FC<IDivider> = (props) => {
@@ -12,9 +12,13 @@ const Divider: React.FC<IDivider> = (props) => {
     return (
       <View style={[globalStyle.flexRow, { gap: 8 }]}>
         <View style={[styles.divider, { flex: 1 }]} />
-        <Text style={{ color: props.textColor ?? Colors.light.text2 }}>
-          {props.text}
-        </Text>
+        {typeof props.text == "string" ? (
+          <Text style={{ color: props.textColor ?? Colors.light.text2 }}>
+            {props.text}
+          </Text>
+        ) : (
+          props.text
+        )}
         <View style={[styles.divider, { flex: 1 }]} />
       </View>
     );

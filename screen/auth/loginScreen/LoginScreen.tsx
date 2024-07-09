@@ -1,17 +1,18 @@
+import Button from "@/components/Button/Button";
+import LenSwicherFooter from "@/components/LenSwicherFooter";
 import { ThemedView } from "@/components/ThemedView";
 import HalfContainer from "@/components/containers/HalfContainer";
+import Divider from "@/components/divider/Divider";
 import StyledInput from "@/components/inputs/TextInput";
 import { globalStyle } from "@/constants/GlobalStyles";
 import { useLenScheme } from "@/hooks/useLenScheme";
+import { useThemeColor } from "@/hooks/useThemeColor";
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import { useState } from "react";
 import { Alert, Image, SafeAreaView, View, useColorScheme } from "react-native";
 import LoginScreenHeader from "./LoginScreenHeader";
 import PassOptions from "./PassOptions";
-import Button from "@/components/Button/Button";
-import Divider from "@/components/divider/Divider";
-import { Ionicons } from "@expo/vector-icons";
-import { useThemeColor } from "@/hooks/useThemeColor";
-import { Colors } from "@/constants/Colors";
 
 const LoginScreen = () => {
   const colorScheme = useColorScheme();
@@ -30,7 +31,7 @@ const LoginScreen = () => {
     <ThemedView style={[globalStyle.fullScreen]}>
       <Image source={loginScreenBg} style={globalStyle.fullScreenBg} />
       <SafeAreaView>
-        <LoginScreenHeader />
+        <LoginScreenHeader isLoginPage />
         <HalfContainer style={{ gap: 16 }}>
           <View>
             <View style={{ gap: 16 }}>
@@ -55,7 +56,7 @@ const LoginScreen = () => {
             iconRight
             TouchableProps={{
               onPress: () => {
-                Alert.alert("Forbiden!");
+                router.replace("(tabs)");
               },
             }}
           />
@@ -108,7 +109,7 @@ const LoginScreen = () => {
               },
             }}
           />
-          <Divider text="Languages" textColor={Colors.dark.main} />
+          <LenSwicherFooter />
         </HalfContainer>
       </SafeAreaView>
     </ThemedView>

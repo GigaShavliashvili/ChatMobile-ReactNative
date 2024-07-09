@@ -1,14 +1,5 @@
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { router } from "expo-router";
-import { SafeAreaView } from "react-native";
+import RegisterScreen from "@/screen/auth/RegistrationScreen/RegisterScreen";
 
 export default () => {
-  return (
-    <SafeAreaView>
-      <ThemedView>
-        <ThemedText>Register</ThemedText>
-      </ThemedView>
-    </SafeAreaView>
-  );
+  return <RegisterScreen />;
 };

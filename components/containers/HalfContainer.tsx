@@ -19,7 +19,7 @@ const HalfContainer: React.FC<HalfContainerProps> = (props) => {
   useEffect(() => {
     Animated.timing(translateY, {
       toValue: 0,
-      duration: 500, // Animation duration in milliseconds
+      duration: 400, // Animation duration in milliseconds
       easing: Easing.ease, // Easing function for smooth animation
       useNativeDriver: true, // Use native driver for performance
     }).start();
